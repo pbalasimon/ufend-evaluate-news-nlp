@@ -18,10 +18,10 @@ async function handleSubmit(event) {
       document.querySelector("#polarity").innerText = data.polarity;
       document.querySelector("#subjectivity").innerText = data.subjectivity;
       document.querySelector(
-        "#confidence"
+        "#polarityConfidence"
       ).innerText = data.polarityConfidence.toFixed(2);
       document.querySelector(
-        "#subjectivity-c"
+        "#subjectivityConfidence"
       ).innerText = data.subjectivityConfidence.toFixed(2);
     } catch (error) {
       console.error(error);
