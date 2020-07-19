@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Evaluate a News Article with Natural Language Processing</title>
-    </head>
 
-    <body>
-        <main>
+<head>
+    <meta charset="utf-8">
+    <title>Evaluate a News Article with Natural Language Processing</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <form onsubmit="return client.handleSubmit(event)">
+                <input id="url" type="text" name="url" placeholder="URL">
+                <input type="submit" name="submit" value="Submit">
+            </form>
             <section>
-                <form onsubmit="return client.handleSubmit(event)">
-                    <input id="url" type="text" name="url" placeholder="URL">
-                    <input type="submit" name="submit" value="Submit">
-                </form>
-            <section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+                <section>
+                    <strong>Results:</strong>
+                    <div id="results">
+                        <div><span class="res-title">polarity: </span>
+                            <span class="res-data" id="polarity"></span>
+                        </div>
+                        <div><span class="res-title">subjectivity: </span>
+                            <span class="res-data" id="subjectivity"></span>
+                        </div>
+                        <div><span class="res-title">polarity confidence: </span>
+                            <span class="res-data" id="confidence"></span>
+                        </div>
+                        <div><span class="res-title">subjectivity confidence: </span>
+                            <span class="res-data" id="subjectivity-c"></span>
+                        </div>
+                    </div>
+                </section>
+    </main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
+    <footer>
+        <p>This is a footer</p>
+    </footer>
 
-    </body>
+</body>
+
 </html>
