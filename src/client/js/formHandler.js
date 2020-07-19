@@ -1,16 +1,12 @@
 function handleSubmit(event) {
-    event.preventDefault()
+  event.preventDefault();
+  const url = document.querySelector("#url").value;
 
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    checkForName(formText)
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+  if (client.validateURL(url)) {
+    console.log(`Form submitted with URL: ${url}`);
+  } else {
+    alert("Please Enter a Valid URL ");
+  }
 }
 
-export { handleSubmit }
+export { handleSubmit };
