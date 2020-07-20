@@ -1,9 +1,19 @@
+import validator from "validator";
+
+function clearResults() {
+  document.querySelector("#polarity").innerText = null;
+  document.querySelector("#subjectivity").innerText = null;
+  document.querySelector("#polarityConfidence").innerText = null;
+  document.querySelector("#subjectivityConfidence").innerText = null;
+}
+
 async function handleSubmit(event) {
   event.preventDefault();
   const url = document.querySelector("#url").value;
 
-  if (client.validateURL(url)) {
+  if (validator.isURL(url)) {
     console.log(`Form submitted with URL: ${url}`);
+    clearResults();
     try {
       const response = await fetch("http://localhost:8081/sentiment", {
         method: "POST",
