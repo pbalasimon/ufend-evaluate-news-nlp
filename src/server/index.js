@@ -45,6 +45,7 @@ app.post("/sentiment", function (req, res) {
       res.send(result);
     } else {
       console.log(error, "Error");
+      res.status(500).end();
     }
   });
 });

@@ -23,6 +23,9 @@ async function handleSubmit(event) {
         },
         body: JSON.stringify({ url }),
       });
+      if (response.status != 200) {
+        throw new Error("Ops! Something happens");
+      }
       const data = await response.json();
       console.log(data);
       document.querySelector("#polarity").innerText = data.polarity;
@@ -34,6 +37,7 @@ async function handleSubmit(event) {
         "#subjectivityConfidence"
       ).innerText = data.subjectivityConfidence.toFixed(2);
     } catch (error) {
+      alert(error);
       console.error(error);
     }
   } else {
