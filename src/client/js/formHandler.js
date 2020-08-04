@@ -1,4 +1,4 @@
-import validator from "validator";
+import { isURLValid } from "./URLValidator";
 
 function clearResults() {
   document.querySelector("#polarity").innerText = null;
@@ -10,8 +10,7 @@ function clearResults() {
 async function handleSubmit(event) {
   event.preventDefault();
   const url = document.querySelector("#url").value;
-
-  if (validator.isURL(url)) {
+  if (isURLValid(url)) {
     console.log(`Form submitted with URL: ${url}`);
     clearResults();
     try {

@@ -27,8 +27,7 @@ app.use(express.static("dist"));
 console.log(__dirname);
 
 app.get("/", function (req, res) {
-  // res.sendFile('dist/index.html')
-  res.sendFile(path.resolve("src/client/views/index.html"));
+  res.sendfile("index.html", { root: "../../dist" });
 });
 
 app.post("/sentiment", function (req, res) {
